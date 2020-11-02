@@ -38,10 +38,11 @@ public class PersoRessource {
 
     //delete BY ID
   @DELETE
-  @Path("/delete/{id}")
-    public void deleteUser(@PathParam("id") Long id){
+  @Path("/select/{id}")
+  @Produces(MediaType.APPLICATION_JSON)
+    public Response deleteUser(@PathParam(value = "id") Long id){
 
-      persoService.deleteUsers(id);
+      return Response.ok().entity(persoService.deleteUsers(id)).build();
 
   }
 
@@ -49,9 +50,10 @@ public class PersoRessource {
     //delete ALL USERS
     @DELETE
     @Path("/delete")
-    public void deleteallUsers(){
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response deleteallUsers(){
 
-        persoService.deleteallUsers();
+        return Response.ok().entity(persoService.deleteallUsers()).build();
 
     }
 }

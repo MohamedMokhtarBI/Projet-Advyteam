@@ -10,8 +10,10 @@ public interface PersoService  {
 
     List<Perso> getAllPerso();
 
-    void deleteUsers(long id) ;
-    void deleteallUsers();
+    List<Perso> deleteUsers(long id) ;
+
+
+    List<Perso> deleteallUsers();
 
 
 

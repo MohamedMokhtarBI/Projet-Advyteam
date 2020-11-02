@@ -27,14 +27,18 @@ public class PersoServiceImpl implements PersoService {
     }
 
     @Override
-    public void deleteUsers(long id)
+    public List<Perso> deleteUsers(long id)
     {
        persoRepository.deleteById(id);
+       return getAllPerso();
     }
- public void deleteallUsers(){
 
+    @Override
+    public List<Perso> deleteallUsers()
+    {
         persoRepository.deleteAll();
- }
+        return getAllPerso();
+    }
 
 
 }

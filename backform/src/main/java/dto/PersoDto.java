@@ -1,14 +1,8 @@
-package domain;
+package dto;
 
-import javax.persistence.*;
+public class PersoDto {
 
-@Entity
-@Table(name = "perso")
-public class Perso {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-     private Long id;
+    private Long id;
 
     private String name;
     private String prenom;
@@ -17,7 +11,7 @@ public class Perso {
     private String adresse ;
     private  String mdp;
 
-    public Perso(Long id, String name, String prenom , String email , String adresse , int age) {
+    public PersoDto(Long id, String name, String prenom , String email , String adresse , int age) {
         this.id = id;
         this.name = name;
         this.prenom = prenom;
@@ -59,7 +53,7 @@ public class Perso {
         this.adresse = adresse;
     }
 
-    public Perso() {
+    public PersoDto() {
     }
 
     public void setAge(int age) {
@@ -86,11 +80,4 @@ public class Perso {
         this.name = name;
     }
 
-    @Override
-    public String toString() {
-        return "Perso{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                '}';
-    }
 }
